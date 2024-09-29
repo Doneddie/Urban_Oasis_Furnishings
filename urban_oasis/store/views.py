@@ -17,6 +17,20 @@ def add_to_cart(request, product_id):
     # Cart handling logic here
     pass
 
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    
+    # Logic to add the product to the cart
+    # Example:
+    cart = Cart.objects.get(user=request.user)
+    cart.add(product)
+
+    return redirect('cart')  # Redirect to the cart page after adding the item
+
+def cart_view(request):
+    # Logic for the cart page
+    return render(request, 'store/cart.html')
+
 def checkout(request):
     if request.method == 'POST':
         form = OrderForm(request.POST)

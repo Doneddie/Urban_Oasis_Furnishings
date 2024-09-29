@@ -2,6 +2,8 @@
 
 {% block title %}Your Shopping Cart{% endblock %}
 
+{% load custom_filters %}  <!-- Loaded my custom filter here -->
+
 {% block content %}
 <h1>Your Shopping Cart</h1>
 {% if cart_items %}
