@@ -1,0 +1,24 @@
+{% extends 'store/base.html' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="300">
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Stock:</strong> {{ product.stock }} available</p>
+
+    {% if product.stock > 0 %}
+        <form method="post" action="{% url 'add_to_cart' product.id %}">
+            {% csrf_token %}
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1" max="{{ product.stock }}">
+            <button type="submit">Add to Cart</button>
+        </form>
+    {% else %}
+        <p>Out of stock</p>
+    {% endif %}
+
+    <a href="{% url 'product_list' %}">Back to Products</a>
+{% endblock %}

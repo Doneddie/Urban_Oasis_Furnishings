@@ -1,0 +1,16 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<h1>Checkout</h1>
+    
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Place Order</button>
+</form>
+
+<a href="{% url 'cart' %}">Back to Cart</a>
+{% endblock %}
+

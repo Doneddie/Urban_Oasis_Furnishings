@@ -1,0 +1,21 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Our Furniture Collection{% endblock %}
+
+{% block content %}
+    <h1>Our Furniture Collection</h1>
+    <ul>
+        {% for product in products %}
+        <li>
+            <a href="{% url 'product_detail' product.id %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="150">
+                <h2>{{ product.name }}</h2>
+                <p>${{ product.price }}</p>
+            </a>
+        </li>
+        {% empty %}
+        <p>No products available at the moment.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

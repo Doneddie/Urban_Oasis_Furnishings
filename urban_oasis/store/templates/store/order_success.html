@@ -1,0 +1,9 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Thank You for Your Order{% endblock %}
+
+{% block content %}
+<h1>Thank You for Your Order!</h1>
+<p>Your order has been successfully placed. We will notify you when it is shipped.</p>
+<a href="{% url 'product_list' %}">Back to Shop</a>
+{% endblock %}
