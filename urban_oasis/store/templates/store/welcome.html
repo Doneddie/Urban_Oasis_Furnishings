@@ -1,0 +1,22 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Welcome to Urban Oasis Furnishings{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Urban Oasis Furnishings</h1>
+    <p>At Urban Oasis Furnishings, we specialize in creating custom furniture pieces that bring life to your home. Our workshop produces hand-crafted, high-quality furnishings designed to suit your style.</p>
+    
+    <h2>What We Do</h2>
+    <p>We offer a wide range of furniture, from modern sofas to bespoke dining tables. Our team of craftsmen works with the finest materials to ensure that every piece is a masterpiece.</p>
+    
+    <h2>Our Vision</h2>
+    <p>To become the leading provider of bespoke furniture solutions by delivering exceptional craftsmanship and customer service.</p>
+    
+    <h2>Our Mission</h2>
+    <p>To design and create unique, high-quality furniture pieces that transform homes into urban oases.</p>
+    
+    <h2>Our Products</h2>
+    <p><a href="{% url 'product_list' %}">Explore our furniture collection</a></p>
+
+    <p><a href="{% url 'register' %}">Sign Up</a> or <a href="{% url 'login' %}">Login</a> to start shopping.</p>
+{% endblock %}
