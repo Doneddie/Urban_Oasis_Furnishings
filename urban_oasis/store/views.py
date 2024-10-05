@@ -35,47 +35,37 @@ def product_detail(request, product_id):
     return render(request, 'store/product_detail.html', {'product': product})
 
 def add_to_cart(request, product_id):
-    # Cart handling logic here
-    pass
-
-def add_to_cart(request, product_id):
+    # Get the product object from the database
     product = get_object_or_404(Product, id=product_id)
 
-     # Check if there is an active order in the session or create a new one
-    order_id = request.session.get('order_id')
+    # Get the current cart from the session or initialize an empty one
+    cart = request.session.get('cart', {})
+
+    # Store product details in the cart (product ID as the key)
+    if str(product_id) in cart:
+        cart[str(product_id)]['quantity'] += 1  # Increase quantity if already in the cart
+    else:
+        cart[str(product_id)] = {
+            'name': product.name,
+            'price': str(product.price),
+            'quantity': 1,
+            'image': product.image.url if product.image else ''
+        }
+
+    # Save the cart back into the session
+    request.session['cart'] = cart
+    request.session.modified = True  # Ensure the session is marked as modified
     
-    if order_id:
-        # Try to retrieve the existing order
-        order = Order.objects.get(id=order_id)
-    else:
-        # No order exists, create a new one
-        order = Order.objects.create(
-            customer_name="Guest", 
-            customer_email="guest@example.com",  # Example, update for real users
-            address="Guest Address", 
-            total_amount=0  # I'll need to update this later
-        )
-        # Save the new order ID in the session
-        request.session['order_id'] = order.id
+    return redirect('cart')  # Redirect to the cart page or wherever
 
-    # Now that you have an order, create the order item
-    if request.method == 'POST':
-        quantity = int(request.POST.get('quantity', 1))  # Default quantity is 1
-        
-        # Create the OrderItem and associate it with the order
-        order_item = OrderItem.objects.create(
-            order=order,
-            product=product,
-            quantity=quantity
-        )
+def cart(request):
+    # Get the cart from session (initialize as empty if it doesn't exist)
+    cart = request.session.get('cart', {})
 
-        # Update the order total amount based on the product price
-        order.total_amount += product.price * quantity
-        order.save()
+    total = sum(float(item['price']) * item['quantity'] for item in cart.values())
+    
+    return render(request, 'store/cart.html', {'cart_items': cart, 'total': total})
 
-        return redirect('cart')  # Redirect to the cart page or wherever
-    else:
-        return HttpResponse("Invalid request method")
 
 def cart_view(request):
     # Logic for the cart page

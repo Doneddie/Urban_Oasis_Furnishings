@@ -5,23 +5,24 @@
 {% load custom_filters %}  <!-- Loaded my custom filter here -->
 
 {% block content %}
-<h1>Your Shopping Cart</h1>
-{% if cart_items %}
-    <ul>
-        {% for item in cart_items %}
-        <li>
-            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" width="100">
-            <h2>{{ item.product.name }}</h2>
-            <p>Quantity: {{ item.quantity }}</p>
-            <p>Price: ${{ item.product.price }}</p>
-            <p>Total: ${{ item.quantity|multiply:item.product.price }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-    <p><strong>Total Amount:</strong> ${{ total_amount }}</p>
-    <a href="{% url 'checkout' %}">Proceed to Checkout</a>
-{% else %}
-    <p>Your cart is empty.</p>
-{% endif %}
-<a href="{% url 'product_list' %}">Continue Shopping</a>
+    <h1>Your Shopping Cart</h1>
+
+    {% if cart_items %}
+        <ul>
+            {% for item_id, item in cart_items.items %}
+                <li>
+                    <img src="{{ item.image }}" alt="{{ item.name }}" width="100">
+                    <h2>{{ item.name }}</h2>
+                    <p>Quantity: {{ item.quantity }}</p>
+                    <p>Price: ${{ item.price }}</p>
+                    <p>Total: ${{ item.quantity|floatformat:2 }} x ${{ item.price|floatformat:2 }} = ${{ item.quantity|floatformat:2|add:item.price|floatformat:2 }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <p><strong>Total:</strong> ${{ total|floatformat:2 }}</p>
+    {% else %}
+        <p>Your cart is empty.</p>
+    {% endif %}
+
+    <a href="{% url 'product_list' %}">Continue Shopping</a>
 {% endblock %}

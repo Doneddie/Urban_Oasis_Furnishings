@@ -15,11 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include 
+from django.urls import path, include
+from store import views  # Import the views from the store app
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('store/', include('store.urls')),
+    path('', views.welcome, name='welcome'), # Set the welcome view as the homepage
+    path('store/', include('store.urls')), # Keep other store URLs here
 ]
 
 from django.conf import settings
