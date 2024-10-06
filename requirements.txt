@@ -1,0 +1,15 @@
+Django>=4.0
+djangorestframework>=3.13
+Pillow>=9.0
+guncorn>=20.0
+whitenoise>=5.0
+django-cors-headers>=3.10
+dj-database-url>=0.5
+python-decouple>=3.6
+django-allauth>=0.45
+django-crispy-forms>=1.13
+django-debug-toolbar>=3.2
+django-environ>=0.8
+django-storages>=1.12
+django-widget-tweaks
+mysqlclient>=2.1.0
