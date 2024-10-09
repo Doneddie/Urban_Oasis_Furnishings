@@ -1,7 +1,7 @@
 Django>=4.0
 djangorestframework>=3.13
 Pillow>=9.0
-guncorn>=20.0
+gunicorn>=20.0
 whitenoise>=5.0
 django-cors-headers>=3.10
 dj-database-url>=0.5
