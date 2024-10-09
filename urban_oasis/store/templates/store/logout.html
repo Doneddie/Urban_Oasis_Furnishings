@@ -1,0 +1,14 @@
+{% extends 'store/base.html' %}
+
+{% block title %}LogOut{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <form action="{% url 'logout' %}" method="POST" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-link" style="border: none; background: none; padding: 0;">Logout</button>
+    </form>
+{% else %}
+    <a href="{% url 'login' %}">Login</a>
+{% endif %}
+{% endblock %}
