@@ -8,11 +8,14 @@
         {% for product in products %}
         <li>
             <a href="{% url 'product_detail' product.id %}">
-                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="150">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="300">
                 <h2>{{ product.name }}</h2>
                 <p>${{ product.price }}</p>
             </a>
         </li>
+        {% load static %}
+        <img src="{% static 'images/your_image.jpg' %}" alt="Description">
+
         {% empty %}
         <p>No products available at the moment.</p>
         {% endfor %}
