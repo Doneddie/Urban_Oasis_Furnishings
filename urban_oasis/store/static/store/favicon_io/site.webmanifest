@@ -1,0 +1,22 @@
+{
+    "name": "Urban Oasis Furnishings",
+    "short_name": "Oasis",
+    "description": "Custom furniture pieces by Urban Oasis Furnishings",
+    "icons": [
+      {
+        "src": "/static/store/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "src": "/static/store/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50",
+    "display": "standalone"
+  }
+  

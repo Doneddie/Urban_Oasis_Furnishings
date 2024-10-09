@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'allauth.socialaccount'
 ]
 
 # Required settings for django-allauth
