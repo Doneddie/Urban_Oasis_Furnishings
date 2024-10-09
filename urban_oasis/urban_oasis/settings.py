@@ -86,12 +86,8 @@ WSGI_APPLICATION = 'urban_oasis.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'urban_oasis',
-        'USER': 'urban_oasis_user',
-        'PASSWORD': 'Doneddie@123',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
 
