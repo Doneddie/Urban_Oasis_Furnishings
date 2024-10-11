@@ -150,6 +150,12 @@ Urban_Oasis_Furnishings/
 ``
 ## Screenshots
 <!-- Included screenshots of the application in use, such as the product list page, shopping cart, and admin panel. -->
+![alt text](Welcome_page.jpeg)
+![alt text](register_page.jpeg)
+![alt text](login_page.jpeg)
+![alt text](about_us_page.jpeg)
+![alt text](product_list_page.jpeg)
+![alt text](<My django admin panel.jpeg>)
 
 ## Usage
 Visit the homepage at http://127.0.0.1:8000/ to browse products.
