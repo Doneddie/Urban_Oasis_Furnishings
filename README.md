@@ -2,7 +2,7 @@
 
 Urban Oasis Furnishings is a custom e-commerce platform built using Django for selling furniture. It allows users to browse products, manage their cart, make purchases, and register or log in to track orders. The application provides an admin interface for managing products, orders, and customers.
 
-Table of Contents
+## Table of Contents
 -Features
 -Tech Stack
 -Prerequisites
@@ -15,7 +15,7 @@ Table of Contents
 -Screenshots
 -Usage
 
-Features
+## Features
 Product Catalog: Users can browse furniture products with descriptions, prices, and images.
 Shopping Cart: Add items to a cart, update quantities, and remove items.
 User Authentication: Users can register, log in, log out, and manage their profiles.
@@ -23,7 +23,8 @@ Order Management: Users can place orders, view their order history, and track or
 Admin Dashboard: Admins can manage products, orders, and users via Django’s admin panel.
 Responsive Design: The front-end is optimized for both desktop and mobile devices.
 Secure Payments: Payments are processed via a third-party payment gateway (future feature).
-Tech Stack
+
+## Tech Stack
 Frontend: HTML, CSS, JavaScript (Optional for additional features)
 Backend: Python, Django
 Database: MySQL (or any other supported by Django)
@@ -32,7 +33,7 @@ django-allauth: For user authentication.
 mysqlclient: MySQL database connector.
 Pillow: For handling image uploads.
 
-Prerequisites
+## Prerequisites
 Before setting up the application, ensure you have the following installed:
 
 Python 3.8+
@@ -41,33 +42,27 @@ Virtualenv (optional but recommended)
 Installation
 1. Clone the Repository
 bash
-Copy code
+``
 git clone https://github.com/your-username/urban-oasis-furnishings.git
 cd urban-oasis-furnishings
+``
 2. Create and Activate a Virtual Environment
 On Windows:
-
 bash
-Copy code
+``
 python -m venv urban_oasis_env
 urban_oasis_env\Scripts\activate
-On macOS/Linux:
-
-bash
-Copy code
-python3 -m venv urban_oasis_env
-source urban_oasis_env/bin/activate
+``
 3. Install Dependencies
 bash
-Copy code
+``
 pip install -r requirements.txt
+``
 4. Configure the .env File
 Create a .env file in the project’s root directory and configure your environment variables as needed.
 
 Example .env file:
-
 env
-Copy code
 SECRET_KEY=your-secret-key
 DEBUG=True
 DB_NAME=urban_oasis_db
@@ -79,26 +74,29 @@ DB_PORT=3306
 MySQL Setup: Ensure that MySQL is installed and running. Create a database:
 
 sql
-Copy code
+``
 CREATE DATABASE urban_oasis_db;
 Apply migrations:
-
+``
 bash
-Copy code
+``
 python manage.py migrate
+``
 6. Create a Superuser
 Create an admin/superuser to access the Django admin panel:
 
 bash
-Copy code
+``
 python manage.py createsuperuser
+``
 7. Run the Development Server
 bash
-Copy code
+``
 python manage.py runserver
+``
 Your application will be available at http://127.0.0.1:8000.
 
-Environment Variables
+## Environment Variables
 Ensure the following environment variables are set up correctly in the .env file:
 
 SECRET_KEY: Django’s secret key for security.
@@ -112,8 +110,9 @@ Database Setup
 Migrations: Django manages database tables using migrations. Run migrations using:
 
 bash
-Copy code
+``
 python manage.py migrate
+``
 Fixtures: Optionally, you can load some initial data into your database by creating fixtures.
 
 Django Admin Panel
@@ -122,16 +121,15 @@ To manage products, orders, and users, you can use the Django admin panel.
 Create an admin user:
 
 bash
-Copy code
+``
 python manage.py createsuperuser
+``
 Access the admin panel at:
-
-arduino
-Copy code
 http://127.0.0.1:8000/admin/
-Project Structure
+
+## Project Structure
 bash
-Copy code
+``
 Urban_Oasis_Furnishings/
 │
 ├── urban_oasis/                # Project settings and configurations
@@ -149,9 +147,11 @@ Urban_Oasis_Furnishings/
 ├── requirements.txt            # List of Python dependencies
 ├── .env                        # Environment variables configuration
 └── ...
-Screenshots
-<!-- Include screenshots of the application in use, such as the product list page, shopping cart, and admin panel. -->
-Usage
+``
+## Screenshots
+<!-- Included screenshots of the application in use, such as the product list page, shopping cart, and admin panel. -->
+
+## Usage
 Visit the homepage at http://127.0.0.1:8000/ to browse products.
 Add products to your cart, view your cart, and proceed to checkout.
 Register for an account or log in to track your orders.
@@ -161,7 +161,7 @@ List of Products: GET /api/products/
 Product Detail: GET /api/products/<id>/
 Add to Cart: POST /api/cart/add/
 Checkout: POST /api/checkout/
-Contributing
+## Contributing
 Contributions are welcome! Please fork the repository and create a pull request for any changes.
 
 Steps:
@@ -170,6 +170,5 @@ Create a new branch (git checkout -b feature-branch).
 Commit your changes (git commit -m 'Add some feature').
 Push the branch (git push origin feature-branch).
 Create a pull request.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+
 
