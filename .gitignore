@@ -1,1 +1,3 @@
-urban_oasis_env
+urban_oasis_env/
+.venv/
+
