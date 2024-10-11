@@ -3,10 +3,49 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-    <h1>Login</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Log In</button>
-    </form>
+<div class="auth-page">
+    <div class="form-container">
+        <h1>Login</h1>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="social-login">
+    <p>Or login with:</p>
+    <a href="{% provider_login_url 'facebook' %}" class="social-btn fb">Facebook</a>
+    <a href="{% provider_login_url 'google' %}" class="social-btn google">Google</a>
+</div>
+
+<style>
+    .social-btn {
+        display: block;
+        padding: 10px;
+        margin: 10px 0;
+        text-align: center;
+        background-color: #ddd;
+        border-radius: 5px;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+    
+    .social-btn.fb {
+        background-color: #3b5998; /* Facebook blue */
+        color: white;
+    }
+    
+    .social-btn.google {
+        background-color: #db4437; /* Google red */
+        color: white;
+    }
+    
+    .social-btn:hover {
+        background-color: #333;
+    }
+    </style>
+    
 {% endblock %}

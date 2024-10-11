@@ -11,11 +11,6 @@ header {
     text-align: center;
 }
 
-nav a {
-    margin: 0 15px;
-    color: white;
-    text-decoration: none;
-}
 
 h1 {
     color: #333;
@@ -39,3 +34,137 @@ img {
     display: block;
     margin: 0 auto 10px;
 }
+
+.welcome {
+    background-image: url("{% static 'store/images/background.jpg' %}"); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Full screen height */
+    color: #fff; /* Text color for contrast */
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.welcome h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.welcome p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #45a049; /* Change background color on hover */
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+}
+
+.auth-page {
+    background-image: url("{% static 'store/images/background.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* General form styling for both login and register */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto; /* Center the form */
+    padding: 20px;
+    background-color: #f7f7f7; /* Light background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-container input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-container a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+
